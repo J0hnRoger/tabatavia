@@ -1,0 +1,10 @@
+{
+  "appId": "tabatavia",
+  "apiKey": "068ecca2f3d9f1b16edc7c3bfaf9359502543b364a9577622de36c4c305f3625",
+  "public": "build",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

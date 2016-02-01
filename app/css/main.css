@@ -1,0 +1,120 @@
+/*
+salmon : #f76363
+red : #c84d4e
+grey-light : #f3f3f3
+grey: #676767
+green: #29eac0
+*/
+/* Globals */
+
+/*Shadows*/
+
+.md-shadow--1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ transition: all 0.2s ease-in-out;
+}
+
+.md-shadow--2 {
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.md-shadow--3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.container
+{
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+.salmon {color: #f76363;}
+
+.grey {color: #676767!important}
+
+/* Header */
+
+.navbar-default {
+  background-color: white;
+  border-color:  #f3f3f3;
+}
+
+.navbar-default .navbar-toggle
+{
+  background-color: white;
+  border-color:  #f3f3f3;
+}
+.navbar-default .navbar-toggle .icon-bar
+{
+  color : #f76363;
+  background-color: #f76363;
+
+}
+.navbar-default .navbar-toggle:hover
+{
+  background-color: white;
+  border-color:  #f3f3f3;
+}
+
+.red-card {
+  background-color: #f76363;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.legends {
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #c84d4e;
+}
+
+/*Week Calendar*/
+.week-planed {
+  background-color: white;
+  margin-top:20px;
+  padding: 15px;
+}
+
+.header.legends
+{
+  text-align: center;
+}
+
+.week {
+  margin:0 auto;
+  height: 100px;
+
+}
+
+.day {
+  padding: 0;
+  border-left: 1px solid #e4e4e6;
+  height: 100%;
+}
+
+.day > .legends {
+  text-align: center;
+}
+
+.day.col-xs-2 {
+  width: 14%;
+}
+
+.day.done {
+  background-color: #e4e4e6
+}
+
+.day.workout{
+  background-color:#c84d4e;
+}
+
+.day.workout .legends{
+color: white;
+}

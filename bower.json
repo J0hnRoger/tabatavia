@@ -1,0 +1,26 @@
+{
+  "name": "tabatavia",
+  "description": "",
+  "main": "index.js",
+  "authors": [],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "install": {
+    "path": "build/vendor"
+  },
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "stamplay-js-sdk": "~1.3.3",
+    "angular-stamplay": "*",
+    "bootstrap": "~3.3.6",
+    "angular-bootstrap": "~0.14.3",
+    "Bootflat": "~2.0.4"
+  }
+}

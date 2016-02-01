@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabatavia</title>
+  <link rel="shortcut icon" href="https://drrjhlchpvi7e.cloudfront.net/editor/149c2ac/img/favicon32.png">
+  <!-- build:css css/bundle.min.css -->
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../bower_components/Bootflat/bootflat/css/bootflat.css">
+  <link href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet">
+  <link href="./css/main.css" rel="stylesheet">
+  <!-- endbuild -->
+</head>
+<body class="container">
+  <nav class="navbar navbar-default" ng-controller="UserController as nav">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" ng-click="navbarCollapsed = !navbarCollapsed">
+          <span class="sr-only">Toggle</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand grey" href="#">Tabatavia</a>
+      </div>
+      <div class="collapse navbar-collapse"  uib-collapse="navbarCollapsed">
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-if="!user"><a ng-click="nav.open_login()">Login</a></li>
+          <li ng-if="!user"><a ng-click="nav.open_register()">Signup</a></li>
+          <li ng-cloak ng-if="user !== undefined && user"><a><span class='badge dark' ng-bind="user.email"></span></a></li>
+          <li ng-cloak ng-if="user !== undefined && user"><a ng-click="nav.logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <ui-view></ui-view>
+  <!-- build:js scripts/bundle.min.js -->
+  <script src="../bower_components/stamplay-js-sdk/dist/stamplay.js" type="text/javascript"></script>
+  <script src="../bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+  <script src="../bower_components/angular/angular.js" type="text/javascript"></script>
+  <script src="../bower_components/angular-ui-router/release/angular-ui-router.js" type="text/javascript"></script>
+  <script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="../bower_components/angular-stamplay/angular-stamplay.js" type="text/javascript"></script>
+  <script src="./javascript/modules/app.module.js" type="text/javascript"></script>
+  <script src="./javascript/factories/note.factory.js" type="text/javascript"></script>
+  <script src="./javascript/factories/exercise.factory.js" type="text/javascript"></script>
+  <script src="./javascript/factories/record.factory.js" type="text/javascript"></script>
+  <script src="./javascript/factories/user.factory.js" type="text/javascript"></script>
+  <script src="./javascript/factories/session.factory.js" type="text/javascript"></script>
+  <script src="./javascript/controllers/session.controller.js" type="text/javascript"></script>
+  <script src="./javascript/controllers/user.controller.js" type="text/javascript"></script>
+  <script src="./javascript/controllers/modal.controller.js" type="text/javascript"></script>
+  <script src="./javascript/controllers/edit.controller.js" type="text/javascript"></script>
+  <!-- endbuild -->
+</body>
+</html>
