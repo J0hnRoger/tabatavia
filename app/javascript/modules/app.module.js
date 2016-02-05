@@ -1,7 +1,8 @@
 angular.module("app", [
   "ui.router",
   "ui.bootstrap",
-  "ngStamplay"
+  "ngStamplay",
+  "ngAnimate"
 ])
 .config(["$urlRouterProvider", "$stateProvider",
   function($urlRouterProvider, $stateProvider) {
@@ -13,9 +14,14 @@ angular.module("app", [
         controller : "SessionController",
         controllerAs : "vm"
       })
+      .state("Workout", {
+        url : "/workout",
+        templateUrl : "./views/workout.html",
+        controller : "WorkoutController",
+        controllerAs : "vm"
+      })
 
     $urlRouterProvider.otherwise("/");
-
 }])
 .run(["$rootScope", function($rootScope) {
 
@@ -32,7 +38,6 @@ angular.module("app", [
         $rootScope.user = false;
         $rootScope.$apply();
       }
-
     })
 
 }])

@@ -1,5 +1,5 @@
-angular.module("app").controller("SessionController", ["UserFactory", "SessionFactory", "RecordFactory", "$uibModal", "$stamplay",
-function(UserFactory, SessionFactory, RecordFactory, $uibModal, $stamplay) {
+angular.module("app").controller("SessionController", ["UserFactory", "SessionFactory", "RecordFactory", "Workout", "$uibModal", "$stamplay",
+function(UserFactory, SessionFactory, RecordFactory, Workout, $uibModal, $stamplay) {
 
   var vm = this;
   vm.new = "";
@@ -7,17 +7,26 @@ function(UserFactory, SessionFactory, RecordFactory, $uibModal, $stamplay) {
   vm.sessions;
   vm.isUpdated = false;
   vm.records = [];
+  vm.emptyWorkout = true;
   vm.currentSession;
+  vm.workout;
   init();
 
 function init(){
 
   UserFactory.getCurrentUser().then(function (user){
     vm.user = user;
-
-    SessionFactory.getNextSessionByUser(user.id)
-        .then(function (sessions){
-          vm.currentSession = sessions;
+    //our week begin monday and not sunday like anglosaxon country
+    var monday = moment().startOf('isoWeek').add(1, 'days');
+    SessionFactory.getNextSessionByUserByDate(user.id, monday)
+        .then(function (session){
+          if (session != undefined)
+            vm.emptyWorkout = false;
+            vm.currentSession = session;
+            Workout.setWorkout(session.workout[0])
+              .then(function(_workout){
+                vm.workout = _workout;
+              })
         });
   });
 }
@@ -51,29 +60,6 @@ function init(){
           vm.sessions = updatedSessions;
           vm.isUpdated = true;
       });
-  }
-
-  vm.deleteNote = function(note, idx) {
-    vm.notes.splice(idx, 1);
-    NoteFactory.deleteNote(note).then(function() {
-      console.info("Note has been deleted.");
-    })
-  }
-
-  vm.createNote = function() {
-    var length = vm.notes.length;
-    var body = vm.new;
-    if(body.length < 1) return;
-    var owner = $rootScope.user ? $rootScope.user.email : "anonymous"
-    var item = { instance : { body : vm.new, owner : { email : owner } } };
-    vm.new = "";
-    vm.notes.push(item);
-    NoteFactory.createNote(body, length)
-      .then(function(res) {
-        vm.notes[res.idx] = res.note;
-      }, function() {
-        console.error("Error: failed to create note.")
-      })
   }
 
   vm.createExercise = function() {

@@ -8,7 +8,6 @@
 </div>
 <div class="row">
   <div class="col-xs-6">
-
   </div>
   <div class="col-xs-6 red-card">
     <div class="title">365</div>
@@ -17,6 +16,7 @@
 </div>
 <div class="row">
   <div class="week-planed md-shadow--1">
+    <div class="week-header"> Fev 01 > Fev 07 </div>
     <div class="week">
       <div class="day done col-xs-2">
         <div class="legends">LUN</div>
@@ -35,4 +35,11 @@
         <div class="legends">Dim</div></div>
     </div>
   </div>
+</div>
+<div class="row next-workout md-shadow--1">
+  <div class="label">{{ vm.currentSession.sessionDate }}</div>
+  <div ng-show="vm.emptyWorkout"> Aucun entrainement en attente.</div>
+  <div class="title">{{vm.workout.name}}</div>
+  <div class="description">{{vm.workout.description}}</div>
+  <a class="btn btn-info btn-block" ui-sref="Workout"> Go > </a>
 </div>

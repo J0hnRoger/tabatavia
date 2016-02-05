@@ -5,7 +5,49 @@ grey-light : #f3f3f3
 grey: #676767
 green: #29eac0
 */
+
+/* Reset BootFlat Theme*/
+.btn-info, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+  background-color: #f76363;
+  border-color:#f76363;
+}
 /* Globals */
+.circle-button {
+    bottom: 0;
+    right: 3.5em;
+    width: 70px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #676767;
+    line-height: 70px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.275);
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    text-align: center;
+}
+/*Animations*/
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+
+}
+
+[ui-view].ng-enter {
+}
+
+[ui-view].ng-enter-active {
+}
+
+[ui-view].ng-leave {
+
+}
+
+[ui-view].ng-leave-active {
+}
 
 /*Shadows*/
 
@@ -87,10 +129,17 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   text-align: center;
 }
 
+.week-header {
+  color: #686868;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+}
+
 .week {
   margin:0 auto;
   height: 100px;
-
 }
 
 .day {
@@ -118,3 +167,141 @@ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 .day.workout .legends{
 color: white;
 }
+
+/*Next Workout*/
+.next-workout {
+  background-color: white;
+  margin-top:20px;
+  padding: 25px;
+}
+
+.next-workout > .label {
+  text-transform: uppercase;
+}
+
+.next-workout .title {
+  color: #676767;
+  font-size: 24px;
+}
+
+/*Workout */
+.exercise-name {
+  border-left: 5px solid #c84d4e;
+}
+
+.exercise-name .legends {
+  text-align: right;
+  font-size: 24px;
+}
+.workout-playground {
+  margin-top:20px;
+}
+.workout-playground .title{
+  text-align: right;
+  color: #676767;
+  font-size: 100px;
+}
+
+.next-exercise {
+  padding: 15px;
+}
+
+.next-exercise .title{
+  font-size:24px;
+  color:#676767;
+}
+
+/*BreadCrumb CSS*/
+.breadcrumb {
+  font-size: 0.7em;
+  position: relative;
+  margin: 2em 0 0 3.8em;
+  padding: 0 0 3em 0;
+}
+
+.six-steps .item {
+  width: 20%;
+}
+
+.item {
+  position: relative;
+  z-index: 1;
+  float: left;
+  text-indent: -8000em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.item:before {
+  content: "";
+  position: absolute;
+  top: .4em;
+  right: .4em;
+  display: block;
+  width: 1em;
+  height: 1em;
+  background: #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.item:after {
+  content: "";
+  position: absolute;
+  top: .65em;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 0.25em;
+}
+.item:first-of-type {
+  position: absolute;
+  left: -1.8em;
+}
+.item:first-of-type:before {
+  left: .4em;
+}
+.item:first-of-type:after {
+  margin-left: 1px;
+}
+.item:first-of-type span {
+  background-position: left 0;
+}
+.item:first-of-type span:first-of-type:after {
+  left: 0;
+}
+.item span {
+  display: block;
+  height: 1.8em;
+  background-position: right 0;
+  background-repeat: no-repeat;
+  background-size: 1.8em;
+}
+.item span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  height: 1.8em;
+  width: 1.8em;
+  -moz-border-radius: 1.8em;
+  -webkit-border-radius: 1.8em;
+  border-radius: 1.8em;
+}
+
+.done span:after, .done:after, .being-done span:after, .being-done:after {
+  background: #f76363;
+}
+
+.not-done span:after, .not-done:after {
+  background: #f3f3f3;
+}
+
+/* buzzer */
+.workout-playground buzzer .title {font-size: 25px;padding:0;}
+.workout-playground buzzer .legends {font-size: 15px;padding:0 10px;}
+.workout-playground .circle-button {margin:0 auto}
+
+buzzer .infos {text-align: center;}

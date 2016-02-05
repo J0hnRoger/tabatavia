@@ -21,6 +21,8 @@
     "angular-stamplay": "*",
     "bootstrap": "~3.3.6",
     "angular-bootstrap": "~0.14.3",
-    "Bootflat": "~2.0.4"
+    "Bootflat": "~2.0.4",
+    "moment": "~2.11.1",
+    "angular-animate": "~1.4.9"
   }
 }

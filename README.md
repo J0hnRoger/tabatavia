@@ -1,16 +1,9 @@
-# Stamplay Angular Seed Project
-A starter project for Stamplay apps built with AngularJS
+# Tabatavia
+Tabatavia is a personal trainer app. It allows you to create your own workout and help you to deal with work/rest time and reps number in live. It records all results for provide you a feedback.    
 
-### Setup Instructions
+# Technos
 
-- Clone project : `git clone https://github.com/Stamplay/stamplay-angular-seed.git`
-
-- Install the project dependencies : `npm install` & `bower install`
-
-- Configure Stamplay Project : Input your `APP ID` and `API KEY` from your Stamplay app dashboard in the corresponding properties in the `stamplay.json` file in the root of the seed project.
-
-- Create a new **Object** schema on Stamplay, named "**note**", with a **body** property as a *string*.
-
+This app is based on the [Stamplay Angular Seed project](https://github.com/Stamplay/stamplay-angular-seed)
 
 ### Running locally for development
 

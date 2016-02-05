@@ -12,20 +12,37 @@ function SessionFactory($stamplay, $q) {
   var service = {
     getSessionByUser: getSessionByUser,
     getNextSessionByUser : getNextSessionByUser,
+    getNextSessionByUserByDate : getNextSessionByUserByDate,
     updateSession : updateSession
   };
 
   return service;
 
-  function getNextSessionByUser(userId) {
+  function getNextSessionByUserByDate(userId, date) {
       var defer = $q.defer();
-
-      var now = new Date("2016-01-30");
 
       var query = new Stamplay.Query('cobject','session');
 
       query.equalTo('worker', userId);
-      query.lessThanOrEqual('sessionDate',now.toISOString());
+      query.greaterThanOrEqual('sessionDate',date.toISOString());
+
+      query
+        .exec()
+        .then(function(response){
+          defer.resolve(response[0]);
+      });
+      return defer.promise;
+    }
+
+  function getNextSessionByUser(userId) {
+      var defer = $q.defer();
+
+      var now = new Date();
+
+      var query = new Stamplay.Query('cobject','session');
+
+      query.equalTo('worker', userId);
+      query.greaterThanOrEqual('sessionDate',now.toISOString());
 
       query.exec()
         .then(function(response){
